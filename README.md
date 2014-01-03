@@ -52,7 +52,7 @@ export HADOOP_OPTS="-Djava.security.krb5.realm= -Djava.security.krb.kdc="
 ```
 
 ### Edit `hdfs-site.xml`
-```
+```xml
 <configuration>
     <property>
         <name>dfs.data.dir</name>
@@ -85,7 +85,7 @@ export HADOOP_OPTS="-Djava.security.krb5.realm= -Djava.security.krb.kdc="
 ### Format the [namenode](http://wiki.apache.org/hadoop/NameNode)
 Do this only once:
 
-```
+```bash
 hadoop namenode -format
 ```
 
@@ -216,7 +216,7 @@ Output:
 	user	0m2.486s
 	sys	0m0.186s
 
-I have no frame of reference to tell me if the time is good, but having satisfies my curiousity.  Also: Yay! No shrapnel!  
+I have no frame of reference to tell me if the time is good, but having it satisfies my curiousity.  Also: Yay! No shrapnel!  
 
 Here's what came out:
 
