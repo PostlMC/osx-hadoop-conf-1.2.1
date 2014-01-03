@@ -12,9 +12,10 @@ This is all based -- _some parts very nearly verbatim_ -- on [Hadoop initial con
 ## Base Install
 There's not a lot of detail in this section because it's all boring lead up bits.
 
-1. Just use [Homebrew](http://brew.sh/) to get Hadoop itself.
-2. Make sure it's possible to SSH to `localhost` [without a password prompt](https://www.google.com/search?q=ssh+passwordless+login) using whatever account will run Hadoop.
-3. Make all the data directories.  A previous life left me with a predilection for sticking non-OS-ey things in `/opt`, so here goes.:
+1. Have a JVM installed.
+2. Just use [Homebrew](http://brew.sh/) to get Hadoop itself.
+3. Make sure it's possible to SSH to `localhost` [without a password prompt](https://www.google.com/search?q=ssh+passwordless+login) using whatever account will run Hadoop.
+4. Make all the data directories.  A previous life left me with a predilection for sticking non-OS-ey things in `/opt`, so here goes.:
 
 ```bash
 sudo mkdir -p /opt/var/hadoop /opt/var/hadoop/nn /opt/var/hadoop/dfs /opt/var/hadoop/mapred
@@ -125,8 +126,9 @@ The output will go a little something like this:
 ### Annoyance: Java Apps and Dock Icons on OSX
 Since I'm running an Apple JVM, OSX places these really unattractive little gray icons in the Dock for each of the processes started with Hadoop:
 
+![Apple JVM Dock Icons on OSX](http://s26.postimg.org/icyr54cd5/osx_java_icons.png)
 
-To get rid of them, add `-Dapple.awt.UIElement` to the `HADOOP-OPTS` variable in `hadoop-env.sh`.  With this and the Kerberos fix, mine now reads:
+To get rid of them, add `-Dapple.awt.UIElement` to the `HADOOP-OPTS` variable in `hadoop-env.sh`.  With this and the [Kerberos fix](#kerberos-fix), mine now reads:
 
     export HADOOP_OPTS="-Dapple.awt.UIElement=true -Djava.security.krb5.realm= -Djava.security.krb.kdc="
 
