@@ -15,10 +15,10 @@ There's not a lot of detail in this section because it's all boring lead up bits
 1. Have a JVM installed.
 2. Just use [Homebrew](http://brew.sh/) to get Hadoop itself.
 3. Make sure it's possible to SSH to `localhost` [without a password prompt](https://www.google.com/search?q=ssh+passwordless+login) using whatever account will run Hadoop.
-4. Make all the data directories.  A previous life left me with a predilection for sticking non-OS-ey things in `/opt`, so here goes.:
+4. Make all the data directories.  A previous life left me with a predilection for sticking non-OS-ey things in `/opt`, so here goes:
 
 ```bash
-sudo mkdir -p /opt/var/hadoop /opt/var/hadoop/nn /opt/var/hadoop/dfs /opt/var/hadoop/mapred
+sudo mkdir -p /opt/var/hadoop/nn /opt/var/hadoop/dfs /opt/var/hadoop/mapred
 sudo chown -R $(whoami) /opt/var/hadoop
 ```
 
